@@ -1,0 +1,71 @@
+#USING SWITCH 
+#TWO WAYS 
+
+
+/*
+  DigitalReadSerial
+
+  Reads a digital input on pin 2, prints the result to the Serial Monitor
+
+  This example code is in the public domain.
+
+  https://www.arduino.cc/en/Tutorial/BuiltInExamples/DigitalReadSerial
+*/
+
+// digital pin 2 has a pushbutton attached to it. Give it a name:
+int pushButton = 2;
+int pushbutton = 3;
+
+// the setup routine runs once when you press reset:
+void setup() {
+  // initialize serial communication at 9600 bits per second:
+  Serial.begin(9600);
+  // make the pushbutton's pin an input:
+  pinMode(2, INPUT_PULLUP);
+  pinMode(3, INPUT_PULLUP);
+}
+
+// the loop routine runs over and over again forever:
+void loop() {
+  // read the input pin:
+  int buttonState1 = digitalRead(2);
+  int buttonState2 = digitalRead(3);
+  // print out the state of the button:
+  Serial.print(buttonState1);
+  Serial.print('\t');
+  Serial.println(buttonState2);
+  
+  delay(1);        // delay in between reads for stability
+
+
+
+// the setup function runs once when you 
+
+  if ( buttonState1 == 0){ 
+ for (int i = 13; i>7;i--){
+ digitalWrite(i, HIGH);
+ delay(300);                       // wait for a second
+ }  
+ for (int i = 7; i<13;i++){
+ digitalWrite(i, LOW);
+ delay(300);                       // wait for a second
+ }  
+ // wait for a second
+  }
+  if ( buttonState2 == 0){
+     for (int i = 7; i<13;i++){
+ digitalWrite(i, HIGH);
+ delay(300);                       // wait for a second
+ }
+for (int i = 13; i>7;i--){
+ digitalWrite(i, LOW);
+ delay(300);                       // wait for a second
+ }  
+  
+ // wait for a second
+  }
+
+  
+}
+
+// the loop function runs over and over again forever
